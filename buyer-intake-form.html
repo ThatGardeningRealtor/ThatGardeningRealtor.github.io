@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buyer Intake Questionnaire — Chris Drawdy</title>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#4B5A34;
+    --coral:#C8553D;
+    --field-bg:#F6F1E6;
+    --field-bc:#9AA38A;
+    --body:#222222;
+    --grey:#666666;
+    --page-bg:#FBF9F4;
+    --sans:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    --marker:'Permanent Marker', cursive;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--page-bg); color:var(--body);
+    font-family:var(--sans); line-height:1.45;
+  }
+  .wrap{max-width:640px; margin:0 auto; padding:32px 20px 80px;}
+  .header-block{text-align:center; margin-bottom:8px;}
+  .header-logo{width:110px; height:110px; margin:0 auto 14px; display:block;}
+  h1{
+    font-family:var(--marker); font-weight:400; color:var(--green);
+    font-size:clamp(28px,7.5vw,38px); margin:0 0 8px;
+  }
+  .subtitle{color:var(--coral); font-style:italic; font-weight:600; margin:0 0 12px; font-size:16px;}
+  .instructions{color:var(--grey); font-size:13px; margin:0 auto 4px; max-width:480px;}
+  .header-rule{
+    width:70px; height:3px; background:var(--green); border:none;
+    margin:18px auto 26px; border-radius:2px; opacity:0.6;
+  }
+  .section-bar{
+    background:var(--green); color:#fff; font-weight:700; font-size:14px;
+    padding:10px 14px; border-radius:6px; margin:28px 0 16px;
+  }
+  .field{margin-bottom:16px;}
+  .field label{display:block; font-size:13.5px; margin-bottom:5px; color:var(--body); font-weight:500;}
+  .field input[type=text], .field input[type=email], .field input[type=tel], .field textarea{
+    width:100%; padding:11px 12px; background:var(--field-bg); border:1px solid var(--field-bc);
+    border-radius:8px; font-family:var(--sans); font-size:15px; color:var(--body);
+  }
+  .field textarea{resize:vertical; min-height:70px;}
+  .row2{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .row4{display:grid; grid-template-columns:repeat(4,1fr); gap:12px;}
+  @media (max-width:520px){ .row4{grid-template-columns:1fr 1fr;} }
+  .check-group{display:flex; flex-wrap:wrap; gap:14px 22px; margin:6px 0 4px;}
+  .check-group label{
+    display:flex; align-items:center; gap:7px; font-size:14px; font-weight:400; margin:0; cursor:pointer;
+  }
+  .check-group input{width:17px; height:17px; accent-color:var(--green); flex:none;}
+  .note{color:var(--coral); font-style:italic; font-size:12.5px; margin:4px 0 10px;}
+  .group-label{font-size:13.5px; font-weight:500; margin-bottom:2px; display:block;}
+  .agreement{font-size:14px; margin:12px 0 20px;}
+  .agreement p{margin:0 0 8px;}
+  button[type=submit]{
+    width:100%; padding:16px; background:var(--green); color:#fff; border:none;
+    border-radius:10px; font-size:17px; font-weight:700; font-family:var(--sans); cursor:pointer;
+    margin-top:10px;
+  }
+  button[type=submit]:hover{background:#3d4a29;}
+  footer{
+    text-align:center; color:var(--grey); font-size:12px; margin-top:30px;
+    border-top:1px solid #ddd6c4; padding-top:14px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header-block">
+    <img class="header-logo" src="data:image/png;base64,__LOGO_B64__" alt="That Gardening Realtor">
+    <h1>Buyer Intake Questionnaire</h1>
+    <p class="subtitle">Help me set up your search and your paperwork the right way.</p>
+    <p class="instructions">Fill out what applies, skip anything you're not sure about, and hit submit when you're done.</p>
+    <p class="instructions">Please don't include account numbers or Social Security numbers. We'll handle proof of funds separately and securely.</p>
+  </div>
+  <hr class="header-rule">
+
+  <!--
+    Replace the action URL below with the endpoint your webform/form-backend
+    service gives you (Formspree, Netlify Forms, your own site's handler, etc).
+    Every field below has a "name" attribute so submissions arrive labeled.
+  -->
+  <form action="https://formspree.io/f/mkjgvewg" method="POST">
+    <input type="hidden" name="_subject" value="New Buyer Intake Questionnaire submission">
+
+    <div class="section-bar">1. About You</div>
+    <div class="row2">
+      <div class="field"><label>Full legal name (as it should appear on the contract)</label><input type="text" name="full_legal_name"></div>
+      <div class="field"><label>Cell phone</label><input type="tel" name="cell_phone"></div>
+    </div>
+    <div class="row2">
+      <div class="field"><label>Co-buyer full legal name (if any)</label><input type="text" name="cobuyer_name"></div>
+      <div class="field"><label>Co-buyer cell</label><input type="tel" name="cobuyer_cell"></div>
+    </div>
+    <div class="row2">
+      <div class="field"><label>Email</label><input type="email" name="email"></div>
+      <div class="field"><label>Second email</label><input type="email" name="second_email"></div>
+    </div>
+    <div class="field"><label>Current address</label><input type="text" name="current_address"></div>
+    <div class="field">
+      <span class="group-label">Best way to reach you</span>
+      <div class="check-group">
+        <label><input type="checkbox" name="reach_call" value="Call"> Call</label>
+        <label><input type="checkbox" name="reach_text" value="Text"> Text</label>
+        <label><input type="checkbox" name="reach_email" value="Email"> Email</label>
+      </div>
+    </div>
+    <div class="row2">
+      <div class="field"><label>Best days and times to reach you</label><input type="text" name="best_times"></div>
+      <div class="field"><label>How did you hear about me? Anyone I should thank?</label><input type="text" name="referral_source"></div>
+    </div>
+    <div class="field"><label>Anyone else helping make this decision? Name and relationship</label><input type="text" name="other_decision_makers"></div>
+
+    <div class="section-bar">2. Your Move</div>
+    <div class="row2">
+      <div class="field"><label>When would you like to be moved in?</label><input type="text" name="move_in_date"></div>
+      <div class="field"><label>What happens if that date slips?</label><input type="text" name="date_slip_plan"></div>
+    </div>
+    <div class="field"><label>What's bringing you to the San Antonio area, or to a new home?</label><textarea name="reason_for_move"></textarea></div>
+    <div class="row2">
+      <div class="field"><label>Moving from (city and state)</label><input type="text" name="moving_from"></div>
+      <div class="field"><label>Employer or business in the area (optional)</label><input type="text" name="employer"></div>
+    </div>
+    <div class="field">
+      <span class="group-label">Your current home</span>
+      <div class="check-group">
+        <label><input type="radio" name="current_home_status" value="Own"> Own</label>
+        <label><input type="radio" name="current_home_status" value="Rent"> Rent</label>
+        <label><input type="radio" name="current_home_status" value="Other"> Other</label>
+      </div>
+    </div>
+    <div class="field">
+      <span class="group-label">If you own</span>
+      <div class="check-group">
+        <label><input type="checkbox" name="if_own" value="Keeping it"> Keeping it</label>
+        <label><input type="checkbox" name="if_own" value="Selling it"> Selling it</label>
+        <label><input type="checkbox" name="if_own" value="Renting it out"> Renting it out</label>
+        <label><input type="checkbox" name="if_own" value="Not sure yet"> Not sure yet</label>
+      </div>
+      <p class="note">Selling your current home? I can connect you with a trusted teammate in that area so all sides are lined up.</p>
+    </div>
+    <div class="row2">
+      <div class="field"><label>If renting, when does your lease end?</label><input type="text" name="lease_end"></div>
+      <div class="field"><label>Who will live in the new home? (for bedroom/layout needs)</label><input type="text" name="household"></div>
+    </div>
+    <div class="row2">
+      <div class="field"><label>Pets? Type and how many</label><input type="text" name="pets"></div>
+      <div class="field"><label>Any accessibility or special layout needs?</label><input type="text" name="accessibility_needs"></div>
+    </div>
+
+    <div class="section-bar">3. The Home</div>
+    <div class="row4">
+      <div class="field"><label>Price range: from</label><input type="text" name="price_from"></div>
+      <div class="field"><label>to</label><input type="text" name="price_to"></div>
+      <div class="field"><label>Bedrooms</label><input type="text" name="bedrooms"></div>
+      <div class="field"><label>Bathrooms</label><input type="text" name="bathrooms"></div>
+    </div>
+    <div class="field">
+      <span class="group-label">Stories</span>
+      <div class="check-group">
+        <label><input type="radio" name="stories" value="1 story"> 1 story</label>
+        <label><input type="radio" name="stories" value="2 story"> 2 story</label>
+        <label><input type="radio" name="stories" value="Either"> Either</label>
+      </div>
+    </div>
+    <div class="row4">
+      <div class="field"><label>Square feet</label><input type="text" name="square_feet"></div>
+      <div class="field"><label>Garage spaces</label><input type="text" name="garage_spaces"></div>
+      <div class="field"><label>Lot size</label><input type="text" name="lot_size"></div>
+      <div class="field"><label>Built in or after (year)</label><input type="text" name="year_built"></div>
+    </div>
+    <div class="field"><label>Max drive time to work or school</label><input type="text" name="max_drive_time"></div>
+    <div class="field">
+      <span class="group-label">Style or type</span>
+      <div class="check-group">
+        <label><input type="checkbox" name="style_type" value="Single family"> Single family</label>
+        <label><input type="checkbox" name="style_type" value="New construction"> New construction</label>
+        <label><input type="checkbox" name="style_type" value="Acreage or land"> Acreage or land</label>
+        <label><input type="checkbox" name="style_type" value="Townhome or condo"> Townhome or condo</label>
+        <label><input type="checkbox" name="style_type" value="Fixer upper"> Fixer upper</label>
+      </div>
+      <input type="text" name="style_type_other" placeholder="Other" style="margin-top:8px;">
+    </div>
+    <div class="field">
+      <span class="group-label">HOA</span>
+      <div class="check-group">
+        <label><input type="radio" name="hoa" value="No HOA"> No HOA</label>
+        <label><input type="radio" name="hoa" value="HOA is OK"> HOA is OK</label>
+        <label><input type="radio" name="hoa" value="Depends on the dues"> Depends on the dues</label>
+      </div>
+    </div>
+    <div class="field">
+      <span class="group-label">Features</span>
+      <div class="check-group">
+        <label><input type="checkbox" name="features" value="Pool"> Pool</label>
+        <label><input type="checkbox" name="features" value="Guest suite or ground floor bedroom"> Guest suite or ground floor bedroom</label>
+        <label><input type="checkbox" name="features" value="Office"> Office</label>
+        <label><input type="checkbox" name="features" value="Big kitchen"> Big kitchen</label>
+        <label><input type="checkbox" name="features" value="High ceilings"> High ceilings</label>
+        <label><input type="checkbox" name="features" value="Natural light"> Natural light</label>
+        <label><input type="checkbox" name="features" value="Workshop or outbuilding"> Workshop or outbuilding</label>
+        <label><input type="checkbox" name="features" value="Space from neighbors"> Space from neighbors</label>
+        <label><input type="checkbox" name="features" value="Garden or yard space"> Garden or yard space</label>
+        <label><input type="checkbox" name="features" value="Fenced yard"> Fenced yard</label>
+      </div>
+      <input type="text" name="features_other" placeholder="Other" style="margin-top:8px;">
+    </div>
+    <div class="field"><label>Your top 3 to 5 MUST HAVES</label><textarea name="must_haves"></textarea></div>
+    <div class="field"><label>Nice to haves</label><textarea name="nice_to_haves"></textarea></div>
+    <div class="field"><label>Deal breakers (anything that is an automatic no)</label><textarea name="deal_breakers"></textarea></div>
+
+    <div class="section-bar">4. Areas + Schools</div>
+    <div class="field"><label>Areas or neighborhoods you like so far</label><input type="text" name="areas_liked"></div>
+    <div class="row2">
+      <div class="field"><label>Areas you want to avoid</label><input type="text" name="areas_avoid"></div>
+      <div class="field"><label>Places you need to be close to (work, family, church, etc.)</label><input type="text" name="places_close_to"></div>
+    </div>
+    <div class="field">
+      <span class="group-label">Schools</span>
+      <div class="check-group">
+        <label><input type="checkbox" name="schools" value="Public"> Public</label>
+        <label><input type="checkbox" name="schools" value="Private"> Private</label>
+        <label><input type="checkbox" name="schools" value="Charter"> Charter</label>
+        <label><input type="checkbox" name="schools" value="Homeschool"> Homeschool</label>
+        <label><input type="checkbox" name="schools" value="Not a factor"> Not a factor</label>
+      </div>
+    </div>
+    <div class="field"><label>Specific schools or districts you want to be near</label><input type="text" name="specific_schools"></div>
+
+    <div class="section-bar">5. The Money</div>
+    <div class="field">
+      <span class="group-label">How are you paying?</span>
+      <div class="check-group">
+        <label><input type="radio" name="how_paying" value="Cash"> Cash</label>
+        <label><input type="radio" name="how_paying" value="Loan"> Loan</label>
+        <label><input type="radio" name="how_paying" value="Some of both"> Some of both</label>
+        <label><input type="radio" name="how_paying" value="Not sure yet"> Not sure yet</label>
+      </div>
+      <p class="note">Cash buyers: listing agents will ask for proof of funds with any offer. Having it ready lets us move fast.</p>
+    </div>
+    <div class="row2">
+      <div class="field"><label>If cash: where are the funds coming from? (general, no account numbers)</label><input type="text" name="cash_source"></div>
+      <div class="field"><label>Date proof of funds will be ready</label><input type="text" name="proof_of_funds_date"></div>
+    </div>
+    <div class="row2">
+      <div class="field"><label>If loan: lender name and phone</label><input type="text" name="lender_info"></div>
+      <div class="field"><label>Pre-approved? (Yes / No / Working on it)</label><input type="text" name="preapproved"></div>
+    </div>
+    <div class="row2">
+      <div class="field"><label>Down payment you plan to put toward the home</label><input type="text" name="down_payment"></div>
+      <div class="field"><label>Comfortable monthly payment range</label><input type="text" name="monthly_payment_range"></div>
+    </div>
+    <div class="field">
+      <span class="group-label">Would you like an introduction to a trusted local lender?</span>
+      <div class="check-group">
+        <label><input type="radio" name="lender_intro" value="Yes"> Yes</label>
+        <label><input type="radio" name="lender_intro" value="No"> No</label>
+        <label><input type="radio" name="lender_intro" value="Maybe, for a second opinion"> Maybe, for a second opinion</label>
+      </div>
+    </div>
+    <div class="field">
+      <span class="group-label">Anything we should plan for?</span>
+      <div class="check-group">
+        <label><input type="checkbox" name="plan_for" value="Self employed"> Self employed</label>
+        <label><input type="checkbox" name="plan_for" value="Recent job change"> Recent job change</label>
+        <label><input type="checkbox" name="plan_for" value="Selling a home first"> Selling a home first</label>
+        <label><input type="checkbox" name="plan_for" value="Past credit issues"> Past credit issues</label>
+        <label><input type="checkbox" name="plan_for" value="None of these"> None of these</label>
+      </div>
+    </div>
+    <div class="field">
+      <span class="group-label">How will you take title?</span>
+      <div class="check-group">
+        <label><input type="radio" name="title" value="Individually"> Individually</label>
+        <label><input type="radio" name="title" value="Married couple"> Married couple</label>
+        <label><input type="radio" name="title" value="With someone else"> With someone else</label>
+        <label><input type="radio" name="title" value="Trust"> Trust</label>
+        <label><input type="radio" name="title" value="LLC or company"> LLC or company</label>
+        <label><input type="radio" name="title" value="Not sure yet"> Not sure yet</label>
+      </div>
+    </div>
+
+    <div class="section-bar">6. Your Search So Far</div>
+    <div class="row2">
+      <div class="field"><label>How long have you been looking?</label><input type="text" name="how_long_looking"></div>
+      <div class="field"><label>Seen anything you liked? Where?</label><input type="text" name="seen_anything"></div>
+    </div>
+    <div class="field">
+      <span class="group-label">Are you working with or signed with another agent?</span>
+      <div class="check-group">
+        <label><input type="radio" name="another_agent" value="No"> No</label>
+        <label><input type="radio" name="another_agent" value="Yes, talking with one"> Yes, talking with one</label>
+        <label><input type="radio" name="another_agent" value="Yes, signed an agreement"> Yes, signed an agreement</label>
+      </div>
+    </div>
+    <div class="row2">
+      <div class="field"><label>On a scale of 1 to 10, how ready are you to buy?</label><input type="text" name="readiness_scale"></div>
+      <div class="field"><label>What would make it a 10?</label><input type="text" name="what_makes_it_10"></div>
+    </div>
+    <div class="field"><label>Anything else you want me to know? Your story, your worries, your wish list.</label><textarea name="anything_else"></textarea></div>
+
+    <div class="section-bar">7. Our Agreement</div>
+    <div class="agreement">
+      <p>I'll be putting real time into setting up your search. Two small favors:</p>
+      <p>1. If you see a home you like, even one listed with another agent or for sale by owner, call me first. I'll get you the details or set up a showing, and you won't have to deal with other salespeople.</p>
+      <p>2. If anything changes with your plans or our appointments, just give me a quick call or text.</p>
+      <p>Your information stays private and is only used to help you find and buy your home.</p>
+    </div>
+    <div class="row2">
+      <div class="field"><label>Buyer signature (type your name)</label><input type="text" name="buyer_signature"></div>
+      <div class="field"><label>Date</label><input type="text" name="signature_date"></div>
+    </div>
+    <div class="field"><label>Co-buyer signature (type your name)</label><input type="text" name="cobuyer_signature"></div>
+
+    <button type="submit">Submit my answers</button>
+  </form>
+
+  <footer>
+    Chris Drawdy · That Gardening Realtor · eXp Realty · TREC #0790317<br>
+    210-942-0487 · chris@getrealtytx.com · christopherdrawdy.exprealty.com · Let's Grow
+  </footer>
+</div>
+</body>
+</html>

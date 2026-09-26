@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seller Intake Questionnaire — Chris Drawdy</title>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#4B5A34;
+    --coral:#C8553D;
+    --field-bg:#F6F1E6;
+    --field-bc:#9AA38A;
+    --body:#222222;
+    --grey:#666666;
+    --page-bg:#FBF9F4;
+    --sans:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    --marker:'Permanent Marker', cursive;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--page-bg); color:var(--body);
+    font-family:var(--sans); line-height:1.45;
+  }
+  .wrap{max-width:640px; margin:0 auto; padding:32px 20px 80px;}
+  .header-block{text-align:center; margin-bottom:8px;}
+  .header-logo{width:110px; height:110px; margin:0 auto 14px; display:block;}
+  h1{
+    font-family:var(--marker); font-weight:400; color:var(--green);
+    font-size:clamp(28px,7.5vw,38px); margin:0 0 8px;
+  }
+  .subtitle{color:var(--coral); font-style:italic; font-weight:600; margin:0 0 12px; font-size:16px;}
+  .instructions{color:var(--grey); font-size:13px; margin:0 auto 4px; max-width:480px;}
+  .header-rule{
+    width:70px; height:3px; background:var(--green); border:none;
+    margin:18px auto 26px; border-radius:2px; opacity:0.6;
+  }
+  .section-bar{
+    background:var(--green); color:#fff; font-weight:700; font-size:14px;
+    padding:10px 14px; border-radius:6px; margin:28px 0 16px;
+  }
+  .field{margin-bottom:16px;}
+  .field label{display:block; font-size:13.5px; margin-bottom:5px; color:var(--body); font-weight:500;}
+  .field input[type=text], .field input[type=email], .field input[type=tel], .field textarea{
+    width:100%; padding:11px 12px; background:var(--field-bg); border:1px solid var(--field-bc);
+    border-radius:8px; font-family:var(--sans); font-size:15px; color:var(--body);
+  }
+  .field textarea{resize:vertical; min-height:70px;}
+  .row2{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .row4{display:grid; grid-template-columns:repeat(4,1fr); gap:12px;}
+  @media (max-width:520px){ .row4{grid-template-columns:1fr 1fr;} }
+  .check-group{display:flex; flex-wrap:wrap; gap:14px 22px; margin:6px 0 4px;}
+  .check-group label{
+    display:flex; align-items:center; gap:7px; font-size:14px; font-weight:400; margin:0; cursor:pointer;
+  }
+  .check-group input{width:17px; height:17px; accent-color:var(--green); flex:none;}
+  .note{color:var(--coral); font-style:italic; font-size:12.5px; margin:4px 0 10px;}
+  .group-label{font-size:13.5px; font-weight:500; margin-bottom:2px; display:block;}
+  .agreement{font-size:14px; margin:12px 0 20px;}
+  .agreement p{margin:0 0 8px;}
+  button[type=submit]{
+    width:100%; padding:16px; background:var(--green); color:#fff; border:none;
+    border-radius:10px; font-size:17px; font-weight:700; font-family:var(--sans); cursor:pointer;
+    margin-top:10px;
+  }
+  button[type=submit]:hover{background:#3d4a29;}
+  footer{
+    text-align:center; color:var(--grey); font-size:12px; margin-top:30px;
+    border-top:1px solid #ddd6c4; padding-top:14px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header-block">
+    <img class="header-logo" src="data:image/png;base64,__LOGO_B64__" alt="That Gardening Realtor">
+    <h1>Seller Intake Questionnaire</h1>
+    <p class="subtitle">Help me get your home ready to list and get you the best possible outcome.</p>
+    <p class="instructions">Fill out what applies, skip anything you're not sure about, and hit submit when you're done.</p>
+    <p class="instructions">Please don't include account numbers or Social Security numbers. We'll handle payoff details separately and securely.</p>
+  </div>
+  <hr class="header-rule">
+
+  <!--
+    Replace the action URL below with the endpoint your webform/form-backend
+    service gives you (Formspree, Netlify Forms, your own site's handler, etc).
+    Every field below has a "name" attribute so submissions arrive labeled.
+  -->
+  <form action="https://formspree.io/f/mkjgvewg" method="POST">
+    <input type="hidden" name="_subject" value="New Seller Intake Questionnaire submission">
+
+    <div class="section-bar">1. About You</div>
+    <div class="row2">
+      <div class="field"><label>Full legal name (as it should appear on listing docs)</label><input type="text" name="full_legal_name"></div>
+      <div class="field"><label>Cell phone</label><input type="tel" name="cell_phone"></div>
+    </div>
+    <div class="row2">
+      <div class="field"><label>Co-owner full legal name (if any)</label><input type="text" name="coowner_name"></div>
+      <div class="field"><label>Co-owner cell</label><input type="tel" name="coowner_cell"></div>
+    </div>
+    <div class="row2">
+      <div class="field"><label>Email</label><input type="email" name="email"></div>
+      <div class="field"><label>Second email</label><input type="email" name="second_email"></div>
+    </div>
+    <div class="field"><label>Property address (the home you're selling)</label><input type="text" name="property_address"></div>
+    <div class="field"><label>Mailing address, if different from above</label><input type="text" name="mailing_address"></div>
+    <div class="field">
+      <span class="group-label">Best way to reach you</span>
+      <div class="check-group">
+        <label><input type="checkbox" name="reach_call" value="Call"> Call</label>
+        <label><input type="checkbox" name="reach_text" value="Text"> Text</label>
+        <label><input type="checkbox" name="reach_email" value="Email"> Email</label>
+      </div>
+    </div>
+    <div class="row2">
+      <div class="field"><label>Best days and times to reach you</label><input type="text" name="best_times"></div>
+      <div class="field"><label>How did you hear about me?</label><input type="text" name="referral_source"></div>
+    </div>
+
+    <div class="section-bar">2. The Property</div>
+    <div class="row4">
+      <div class="field"><label>Bedrooms</label><input type="text" name="bedrooms"></div>
+      <div class="field"><label>Bathrooms</label><input type="text" name="bathrooms"></div>
+      <div class="field"><label>Square feet</label><input type="text" name="square_feet"></div>
+      <div class="field"><label>Year built</label><input type="text" name="year_built"></div>
+    </div>
+    <div class="row4">
+      <div class="field"><label>Lot size <span style="font-weight:400; color:var(--grey);">(an estimate is fine)</span></label><input type="text" name="lot_size" placeholder="e.g., approx. 0.25 acres"></div>
+      <div class="field"><label>Garage spaces</label><input type="text" name="garage_spaces"></div>
+      <div class="field"><label>Stories</label><input type="text" name="stories"></div>
+      <div class="field"><label>HOA dues (if any)</label><input type="text" name="hoa_dues"></div>
+    </div>
+    <div class="field">
+      <span class="group-label">Property type</span>
+      <div class="check-group">
+        <label><input type="radio" name="property_type" value="Single family"> Single family</label>
+        <label><input type="radio" name="property_type" value="Townhome/condo"> Townhome/condo</label>
+        <label><input type="radio" name="property_type" value="Multi-family"> Multi-family</label>
+        <label><input type="radio" name="property_type" value="Land"> Land</label>
+        <label><input type="radio" name="property_type" value="Farm/ranch"> Farm/ranch</label>
+      </div>
+    </div>
+    <div class="field">
+      <span class="group-label">Current occupancy</span>
+      <div class="check-group">
+        <label><input type="radio" name="occupancy" value="Owner-occupied"> Owner-occupied</label>
+        <label><input type="radio" name="occupancy" value="Tenant-occupied"> Tenant-occupied</label>
+        <label><input type="radio" name="occupancy" value="Vacant"> Vacant</label>
+      </div>
+    </div>
+    <div class="row2">
+      <div class="field"><label>If tenant-occupied, lease end date</label><input type="text" name="lease_end_date"></div>
+      <div class="field"><label>If HOA, is it a mandatory HOA?</label><input type="text" name="hoa_mandatory"></div>
+    </div>
+
+    <div class="section-bar">3. Condition &amp; Upgrades</div>
+    <div class="field">
+      <span class="group-label">Overall condition</span>
+      <div class="check-group">
+        <label><input type="radio" name="condition" value="Excellent"> Excellent</label>
+        <label><input type="radio" name="condition" value="Good"> Good</label>
+        <label><input type="radio" name="condition" value="Fair"> Fair</label>
+        <label><input type="radio" name="condition" value="Needs work"> Needs work</label>
+      </div>
+    </div>
+    <div class="row2">
+      <div class="field"><label>Roof age / last replaced</label><input type="text" name="roof_age"></div>
+      <div class="field"><label>HVAC age / last replaced</label><input type="text" name="hvac_age"></div>
+    </div>
+    <div class="row2">
+      <div class="field"><label>Water heater age</label><input type="text" name="water_heater_age"></div>
+      <div class="field"><label>Foundation: any known issues?</label><input type="text" name="foundation_issues"></div>
+    </div>
+    <div class="field"><label>Recent upgrades (kitchen, baths, flooring, windows, paint, etc.) and approx. year</label><textarea name="recent_upgrades"></textarea></div>
+    <div class="field">
+      <span class="group-label">Features</span>
+      <div class="check-group">
+        <label><input type="checkbox" name="features" value="Pool"> Pool</label>
+        <label><input type="checkbox" name="features" value="Guest suite"> Guest suite</label>
+        <label><input type="checkbox" name="features" value="Office"> Office</label>
+        <label><input type="checkbox" name="features" value="Big kitchen"> Big kitchen</label>
+        <label><input type="checkbox" name="features" value="High ceilings"> High ceilings</label>
+        <label><input type="checkbox" name="features" value="Natural light"> Natural light</label>
+        <label><input type="checkbox" name="features" value="Workshop/outbuilding"> Workshop/outbuilding</label>
+        <label><input type="checkbox" name="features" value="Garden or yard space"> Garden or yard space</label>
+        <label><input type="checkbox" name="features" value="Fenced yard"> Fenced yard</label>
+        <label><input type="checkbox" name="features" value="Solar panels"> Solar panels</label>
+        <label><input type="checkbox" name="features" value="Sprinkler system"> Sprinkler system</label>
+      </div>
+      <input type="text" name="features_other" placeholder="Other" style="margin-top:8px;">
+    </div>
+    <div class="field"><label>Known issues or repairs needed (be candid, this helps us price and disclose correctly)</label><textarea name="known_issues"></textarea></div>
+    <div class="field"><label>Anything you love about this home that we should highlight in marketing</label><textarea name="marketing_highlights"></textarea></div>
+
+    <div class="section-bar">4. Why You're Selling</div>
+    <div class="field"><label>What's prompting the move?</label><textarea name="reason_for_selling"></textarea></div>
+    <div class="row2">
+      <div class="field"><label>When would you like to be closed by?</label><input type="text" name="close_by_date"></div>
+      <div class="field"><label>What happens if that date slips?</label><input type="text" name="date_slip_plan"></div>
+    </div>
+    <div class="field">
+      <span class="group-label">Buying another home too?</span>
+      <div class="check-group">
+        <label><input type="radio" name="buying_another" value="No"> No</label>
+        <label><input type="radio" name="buying_another" value="Yes, already found one"> Yes, already found one</label>
+        <label><input type="radio" name="buying_another" value="Yes, still looking"> Yes, still looking</label>
+        <label><input type="radio" name="buying_another" value="Need to sell first"> Need to sell first</label>
+      </div>
+    </div>
+    <div class="field"><label>Any hard deadlines (job start, school year, closing on your next home, etc.)</label><input type="text" name="hard_deadlines"></div>
+
+    <div class="section-bar">5. The Money</div>
+    <div class="field">
+      <span class="group-label">Do you have a mortgage on this property?</span>
+      <div class="check-group">
+        <label><input type="radio" name="has_mortgage" value="No, owned free and clear"> No, owned free &amp; clear</label>
+        <label><input type="radio" name="has_mortgage" value="Yes, one loan"> Yes, one loan</label>
+        <label><input type="radio" name="has_mortgage" value="Yes, more than one"> Yes, more than one</label>
+      </div>
+    </div>
+    <div class="row2">
+      <div class="field"><label>Lender name</label><input type="text" name="lender_name"></div>
+      <div class="field"><label>Approx. loan balance</label><input type="text" name="loan_balance"></div>
+    </div>
+    <div class="field">
+      <span class="group-label">Are you current on payments?</span>
+      <div class="check-group">
+        <label><input type="radio" name="current_on_payments" value="Yes"> Yes</label>
+        <label><input type="radio" name="current_on_payments" value="No"> No</label>
+        <label><input type="radio" name="current_on_payments" value="Behind, working on it"> Behind, working on it</label>
+      </div>
+    </div>
+    <div class="row2">
+      <div class="field"><label>Any second mortgage, HELOC, or liens?</label><input type="text" name="second_lien"></div>
+      <div class="field"><label>Approx. balance, if any</label><input type="text" name="second_lien_balance"></div>
+    </div>
+    <div class="row2">
+      <div class="field"><label>Desired list price (your ballpark)</label><input type="text" name="desired_list_price"></div>
+      <div class="field"><label>Minimum acceptable net proceeds</label><input type="text" name="min_net_proceeds"></div>
+    </div>
+    <div class="field">
+      <span class="group-label">Repairs before listing</span>
+      <div class="check-group">
+        <label><input type="radio" name="repairs_preference" value="I'll make repairs first"> I'll make repairs first</label>
+        <label><input type="radio" name="repairs_preference" value="Prefer to sell as-is"> Prefer to sell as-is</label>
+        <label><input type="radio" name="repairs_preference" value="Open to either, let's discuss"> Open to either, let's discuss</label>
+      </div>
+    </div>
+    <div class="field">
+      <span class="group-label">Open to creative or seller-financing options (owner finance, lease-option, etc.)?</span>
+      <div class="check-group">
+        <label><input type="radio" name="creative_financing" value="Yes"> Yes</label>
+        <label><input type="radio" name="creative_financing" value="No"> No</label>
+        <label><input type="radio" name="creative_financing" value="Maybe, tell me more"> Maybe, tell me more</label>
+      </div>
+    </div>
+
+    <div class="section-bar">6. Showings &amp; Access</div>
+    <div class="field">
+      <span class="group-label">Lockbox on the door okay?</span>
+      <div class="check-group">
+        <label><input type="radio" name="lockbox_ok" value="Yes"> Yes</label>
+        <label><input type="radio" name="lockbox_ok" value="No"> No</label>
+        <label><input type="radio" name="lockbox_ok" value="Let's discuss"> Let's discuss</label>
+      </div>
+    </div>
+    <div class="row2">
+      <div class="field"><label>Pets on the property? Type and any notes</label><input type="text" name="pets"></div>
+      <div class="field"><label>Notice needed before a showing</label><input type="text" name="showing_notice"></div>
+    </div>
+    <div class="field"><label>Best times for showings, and anyone else who needs to approve them (tenant, family, etc.)</label><textarea name="showing_times"></textarea></div>
+    <div class="field">
+      <span class="group-label">Yard sign okay?</span>
+      <div class="check-group">
+        <label><input type="radio" name="yard_sign_ok" value="Yes"> Yes</label>
+        <label><input type="radio" name="yard_sign_ok" value="No"> No</label>
+      </div>
+    </div>
+    <div class="field"><label>Any privacy or security concerns (cameras, unlisted address in ads, etc.)</label><textarea name="privacy_concerns"></textarea></div>
+
+    <div class="section-bar">7. Marketing &amp; Goals</div>
+    <div class="field">
+      <span class="group-label">What matters most to you?</span>
+      <div class="check-group">
+        <label><input type="radio" name="top_priority" value="Highest price"> Highest price</label>
+        <label><input type="radio" name="top_priority" value="Fastest sale"> Fastest sale</label>
+        <label><input type="radio" name="top_priority" value="Most convenient"> Most convenient</label>
+        <label><input type="radio" name="top_priority" value="Balance of all three"> Balance of all three</label>
+      </div>
+    </div>
+    <div class="field">
+      <span class="group-label">Open to hosting an open house?</span>
+      <div class="check-group">
+        <label><input type="radio" name="open_house_ok" value="Yes"> Yes</label>
+        <label><input type="radio" name="open_house_ok" value="No"> No</label>
+        <label><input type="radio" name="open_house_ok" value="Maybe"> Maybe</label>
+      </div>
+    </div>
+    <div class="field"><label>Anything else about the neighborhood or community worth featuring</label><textarea name="community_highlights"></textarea></div>
+
+    <div class="section-bar">8. Our Agreement</div>
+    <div class="agreement">
+      <p>I'll be putting real time into pricing this right and marketing it well. Two small favors:</p>
+      <p>1. If a buyer or another agent contacts you directly, send them my way so everything stays documented and protects you.</p>
+      <p>2. If anything changes with your timeline or plans, just give me a quick call or text.</p>
+      <p>Your information stays private and is only used to help you sell your home.</p>
+    </div>
+    <div class="row2">
+      <div class="field"><label>Seller signature (type your name)</label><input type="text" name="seller_signature"></div>
+      <div class="field"><label>Date</label><input type="text" name="signature_date"></div>
+    </div>
+    <div class="field"><label>Co-seller signature (type your name)</label><input type="text" name="coseller_signature"></div>
+
+    <button type="submit">Submit my answers</button>
+  </form>
+
+  <footer>
+    Chris Drawdy · That Gardening Realtor · eXp Realty · TREC #0790317<br>
+    210-942-0487 · chris@getrealtytx.com · christopherdrawdy.exprealty.com · Let's Grow
+  </footer>
+</div>
+</body>
+</html>
