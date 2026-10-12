@@ -118,6 +118,9 @@
     box-shadow:0 3px 10px rgba(0,0,0,0.28);
     transition:transform .12s ease, box-shadow .12s ease, background .15s ease;
   }
+  .pair{display:flex; gap:14px;}
+  .pair .pill{flex:1; min-width:0; width:auto;}
+  .pair .pill .label{flex:none;}
   /* the quick-action buttons up top: true Linktree-classic style,
      no leading icon, bold centered text; everything else (listings,
      resources, guides) stays left-aligned with an icon/thumbnail */
@@ -323,6 +326,7 @@
       <svg class="ico" viewBox="0 0 24 24"><path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5Zm0 2c-4 0-8 2-8 5v2h16v-2c0-3-4-5-8-5Z"/></svg>
       <span class="label">Save my contact</span>
     </a>
+    <div class="pair">
     <a class="pill" href="tel:+12109420487">
       <svg class="ico" viewBox="0 0 24 24"><path d="M4 4c0 9 7 16 16 16l3-4-6-3-2 2c-2-1-4-3-5-5l2-2-3-6Z"/></svg>
       <span class="label">Call</span>
@@ -331,6 +335,7 @@
       <svg class="ico" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 6 8 7 8-7"/></svg>
       <span class="label">Email</span>
     </a>
+    </div>
     <a class="pill" href="https://calendly.com/getrealtytx/1-on-1_phone-call" target="_blank" rel="noopener">
       <svg class="ico" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
       <span class="label">Schedule a call</span>
