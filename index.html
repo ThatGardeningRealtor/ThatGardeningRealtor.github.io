@@ -160,6 +160,32 @@
   .pill.primary .label .sub{color:rgba(20,20,20,0.65);}
   .pill.primary:hover{background:#7dae6c;}
 
+  /* ---------- LRH newsletter feature card: the one warm terracotta
+     element on the page so it reads first after the main actions ---------- */
+  .lrh{
+    display:flex; flex-wrap:wrap; align-items:center; gap:14px 16px;
+    margin-top:24px;
+    padding:20px 20px;
+    border-radius:24px;
+    border:2px solid var(--terracotta);
+    background:linear-gradient(150deg, #2a1a12 0%, var(--panel) 70%);
+    box-shadow:0 6px 18px rgba(193,101,47,0.22);
+    color:var(--cream);
+    transition:transform .12s ease, box-shadow .12s ease;
+  }
+  .lrh:hover{transform:translateY(-1px); box-shadow:0 8px 22px rgba(193,101,47,0.34);}
+  .lrh:active{transform:scale(0.98);}
+  .lrh .lrh-ico{width:46px; height:46px; flex:none; stroke:var(--terracotta); fill:none; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round;}
+  .lrh .lrh-text{flex:1; min-width:0;}
+  .lrh .lrh-title{font-family:var(--marker); font-size:25px; line-height:1.1; color:var(--cream);}
+  .lrh .lrh-sub{font-size:14px; line-height:1.4; color:var(--cream-dim); margin-top:5px;}
+  .lrh .lrh-join{
+    flex:1 0 100%; padding:12px 15px; border-radius:999px; text-align:center;
+    background:var(--terracotta); color:var(--cream);
+    font-weight:700; font-size:16px;
+  }
+  @media (prefers-reduced-motion:reduce){ .lrh, .lrh:hover{transition:none; transform:none;} }
+
   /* ---------- section labels ---------- */
   .section-label{
     margin:34px 0 12px;
@@ -322,6 +348,15 @@
     </a>
   </div>
 
+  <a class="lrh" href="https://getrealtytx.com/little-red-house-news/" target="_blank" rel="noopener">
+    <svg class="lrh-ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 24 24 8l18 16"/><path d="M11 21v19h26V21"/><path d="M24 40V28"/><path d="M24 31c-4 0-6-2-6-5 4 0 6 2 6 5Z"/><path d="M24 29c0-3 2-5 6-5 0 3-2 5-6 5Z"/></svg>
+    <div class="lrh-text">
+      <div class="lrh-title">LRH Newsletter</div>
+      <div class="lrh-sub">Garden tips, local market notes and what's growing. Free in your inbox.</div>
+    </div>
+    <span class="lrh-join">Sign up free</span>
+  </a>
+
   <div class="section-label">Current listings</div>
   <div class="stack">
 
@@ -384,10 +419,6 @@
     <a class="pill" href="https://getrealtytx.com/blog/" target="_blank" rel="noopener">
       <svg class="ico" viewBox="0 0 24 24"><path d="M4 19V5a2 2 0 0 1 2-2h9l5 5v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="M14 3v5h5M8 13h8M8 17h5"/></svg>
       <span class="label">Blog<span class="sub">Market updates & real talk</span></span>
-    </a>
-    <a class="pill" href="https://getrealtytx.com/little-red-house-news/" target="_blank" rel="noopener">
-      <svg class="ico" viewBox="0 0 24 24"><path d="M12 2c-2 3-5 5-5 9a5 5 0 0 0 10 0c0-4-3-6-5-9Z"/><path d="M12 15v7"/></svg>
-      <span class="label">Little Red House News<span class="sub">Garden newsletter, sign up here</span></span>
     </a>
   </div>
 
